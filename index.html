@@ -31,22 +31,24 @@
         /* Cabeçalho */
         header {
             background: linear-gradient(to bottom, #1e3a8a, #121212);
-            padding: 20px 20px;
-            position: relative;
+            padding: 20px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .logo-container {
-            position: absolute;
-            left: 20px;
-            top: 20px;
+            position: relative;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
+            margin-bottom: 20px;
         }
 
         .logo-container img {
-            width: 100px; /* Tamanho ajustado para não ser muito pequeno */
+            width: 100px;
             height: auto;
         }
 
@@ -60,7 +62,6 @@
         header .subtitle {
             font-size: 1.5em;
             color: #b0c4de;
-            margin-top: 60px; /* Espaço para não grudar na logo/nome */
             margin-bottom: 20px;
         }
 
@@ -86,7 +87,7 @@
             max-width: 900px;
             margin: 40px auto;
             padding: 20px;
-            flex: 1; /* Faz o main ocupar o espaço disponível, empurrando o rodapé para baixo */
+            flex: 1;
         }
 
         .intro {
@@ -197,12 +198,31 @@
 
         /* Responsividade */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8em;
+            .logo-container {
+                flex-direction: row;
+                margin-bottom: 15px;
+            }
+
+            .logo-container img {
+                width: 80px;
+            }
+
+            .logo-container h1 {
+                font-size: 1.5em;
             }
 
             header .subtitle {
                 font-size: 1em;
+                margin-bottom: 15px;
+            }
+
+            header .cta-button {
+                padding: 8px 20px;
+                font-size: 1em;
+            }
+
+            header {
+                padding: 15px;
             }
 
             .intro h2 {
@@ -212,9 +232,24 @@
             .servico-item {
                 width: 100%;
             }
+        }
+
+        @media (max-width: 480px) {
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+            }
 
             .logo-container img {
-                width: 80px;
+                width: 70px;
+            }
+
+            .logo-container h1 {
+                font-size: 1.3em;
+            }
+
+            header .subtitle {
+                font-size: 0.9em;
             }
         }
     </style>
