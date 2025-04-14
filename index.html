@@ -183,6 +183,68 @@
             transform: scale(1.1);
         }
 
+        /* Estilo do Popup */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #d61900;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .popup-content h3 {
+            color: #e0e0e0;
+            margin-bottom: 15px;
+        }
+
+        .popup-content p {
+            color: #b0c4de;
+            margin-bottom: 20px;
+        }
+
+        .popup-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .popup-button {
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .popup-button.whatsapp {
+            background: #39ff14;
+            color: #121212;
+        }
+
+        .popup-button.cancel {
+            background: #d61900;
+            color: #fff;
+        }
+
+        .popup-button:hover {
+            opacity: 0.9;
+        }
+
         /* Rodapé */
         footer {
             background: #1a1a1a;
@@ -251,6 +313,10 @@
             header .subtitle {
                 font-size: 0.9em;
             }
+
+            .popup-content {
+                width: 95%;
+            }
         }
     </style>
 </head>
@@ -279,12 +345,12 @@
             <div class="servico-item">
                 <i class="fas fa-battery-half"></i>
                 <h3>Bateria</h3>
-                <p>Bateria com defeito? Substituímos por opções certificadas, com garantia de 90 dias.</p>
+                <p>Bateria estufada? Durando pouco ? Substituimos por opções certificadas e com garantia.</p>
             </div>
             <div class="servico-item">
                 <i class="fas fa-microchip"></i>
                 <h3>Placa</h3>
-                <p>Celular não liga? Consertamos placas com precisão, resolvendo falhas técnicas.</p>
+                <p>Celular não liga? Wifi e bluetooth ou dados móveis OFF ? Diagnóstico completo.</p>
             </div>
         </div>
 
@@ -298,12 +364,25 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- Popup WhatsApp -->
+    <div class="popup-overlay" id="whatsappPopup">
+        <div class="popup-content">
+            <h3>Faça um Orçamento!</h3>
+            <p>Gostaria de entrar em contato pelo WhatsApp para solicitar um orçamento?</p>
+            <div class="popup-buttons">
+                <a href="https://wa.me/5516991693735?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%21" target="_blank" class="popup-button whatsapp">Sim, chamar no WhatsApp</a>
+                <button class="popup-button cancel" onclick="closePopup()">Não, continuar no site</button>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <p>© 2025 Tubarão Infocell | Ribeirão Preto, SP </p>
     </footer>
 
-    <!-- Script do GSAP -->
+    <!-- Script do GSAP e Popup -->
     <script>
+        // Animações GSAP
         gsap.from(".logo-container img", { duration: 1, x: -50, opacity: 0, ease: "power2.out" });
         gsap.from(".logo-container h1", { duration: 1, x: 50, opacity: 0, delay: 0.3, ease: "power2.out" });
         gsap.from("header .subtitle", { duration: 1, y: 50, opacity: 0, delay: 0.6, ease: "power2.out" });
@@ -311,6 +390,16 @@
         gsap.from(".intro h2", { duration: 1, opacity: 0, y: 50, delay: 1.2 });
         gsap.from(".servico-item", { duration: 1, opacity: 0, y: 50, stagger: 0.2, delay: 1.5 });
         gsap.from(".contact-info", { duration: 1, opacity: 0, y: 50, delay: 2 });
+
+        // Mostrar popup após 7 segundos
+        setTimeout(() => {
+            document.getElementById('whatsappPopup').style.display = 'flex';
+        }, 7000);
+
+        // Função para fechar o popup
+        function closePopup() {
+            document.getElementById('whatsappPopup').style.display = 'none';
+        }
     </script>
 </body>
 </html>
