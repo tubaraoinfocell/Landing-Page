@@ -1,276 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Faça sua cotação rápida para consertos de smartphones na Tubarão Infocell via WhatsApp. Atendimento em Ribeirão Preto, SP.">
-    <meta name="keywords" content="cotação, conserto de celular, Tubarão Infocell, Ribeirão Preto, WhatsApp">
-    <meta name="robots" content="index, follow">
-    <title>Cotação Rápida - Tubarão Infocell</title>
-    <!-- Font Awesome para ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google Fonts: Orbitron -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <!-- GSAP para animações -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        body {
-            background: #121212;
-            color: #e0e0e0;
-            line-height: 1.6;
-            overflow-x: hidden;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Cabeçalho */
-        header {
-            background: linear-gradient(to bottom, #1e3a8a, #121212);
-            padding: 20px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .logo-container {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .logo-container img {
-            width: 100px;
-            height: auto;
-        }
-
-        .logo-container h1 {
-            font-size: 2em;
-            font-weight: 700;
-            color: #ffffff;
-            text-shadow: 0 0 10px rgb(255, 255, 255);
-        }
-
-        header .subtitle {
-            font-size: 1.5em;
-            color: #b0c4de;
-            margin-bottom: 20px;
-        }
-
-        /* Seção Principal */
-        main {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            flex: 1;
-            text-align: center;
-        }
-
-        .cotacao-section {
-            background: #1a1a1a;
-            padding: 30px;
-            border-radius: 8px;
-            border: 1px solid #d61900;
-            margin-bottom: 40px;
-        }
-
-        .cotacao-section h2 {
-            font-size: 2em;
-            color: #1e3a8a;
-            margin-bottom: 20px;
-            text-shadow: 0 0 5px rgba(30, 58, 138, 0.5);
-        }
-
-        .cotacao-section p {
-            font-size: 1.1em;
-            color: #b0c4de;
-            margin-bottom: 30px;
-        }
-
-        .cta-button {
-            background: #1e3a8a;
-            color: #fff;
-            padding: 15px 30px;
-            border: 2px solid #d61900;
-            border-radius: 20px;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .cta-button:hover {
-            background: #d61900;
-            color: #121212;
-            transform: scale(1.05);
-        }
-
-        .cotacao-info {
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: #b0c4de;
-        }
-
-        .cotacao-info p {
-            margin-bottom: 10px;
-        }
-
-        /* Botão WhatsApp Flutuante */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #39ff14;
-            color: #121212;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8em;
-            box-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
-            transition: transform 0.3s;
-            z-index: 1000;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-
-        /* Rodapé */
-        footer {
-            background: #1a1a1a;
-            padding: 20px;
-            text-align: center;
-            font-size: 0.9em;
-            color: #b0c4de;
-            border-top: 3px solid #1e3a8a;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        footer a {
-            color: #39ff14;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .logo-container {
-                flex-direction: row;
-                margin-bottom: 15px;
-            }
-
-            .logo-container img {
-                width: 80px;
-            --
-
-            .logo-container h1 {
-                font-size: 1.5em;
-            }
-
-            header .subtitle {
-                font-size: 1em;
-                margin-bottom: 15px;
-            }
-
-            .cotacao-section h2 {
-                font-size: 1.5em;
-            }
-
-            .cotacao-section p {
-                font-size: 1em;
-            }
-
-            .cta-button {
-                padding: 10px 20px;
-                font-size: 1em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo-container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .logo-container img {
-                width: 70px;
-            }
-
-            .logo-container h1 {
-                font-size: 1.3em;
-            }
-
-            header .subtitle {
-                font-size: 0.9em;
-            }
-
-            .cotacao-section {
-                padding: 20px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solicitar Orçamento - Tubarão Infocell</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f7f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 90%;
+    }
+    .logo {
+      max-width: 150px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      color: #000;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    p {
+      color: #555;
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: white;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+    .btn-whatsapp:hover {
+      background-color: #1ebe5d;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="./imagens/logo.png" alt="Tubarão Infocell Logo">
-            <h1>Tubarão Infocell</h1>
-        </div>
-        <p class="subtitle">Cotação Rápida </p>
-    </header>
-
-    <main>
-        <section class="cotacao-section">
-            <h2><i class="fas fa-tools"></i> Faça Sua Cotação Agora!</h2>
-            <p>Na Tubarão Infocell, oferecemos orçamentos rápidos e gratuitos via WhatsApp. Clique abaixo e fale conosco em minutos!</p>
-            <a href="https://wa.me/5516991693735?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%21" target="_blank" class="cta-button">Solicitar Cotação no WhatsApp</a>
-            <div class="cotacao-info">
-                <p>📍 Localizados em Sumarezinho, Ribeirão Preto, SP</p>
-                <p>🚚 Buscamos e entregamos sem custo adicional</p>
-                <p>🛠️ Serviços para visor, bateria, placa e mais</p>
-            </div>
-        </section>
-    </main>
-
-    <!-- Botão WhatsApp Flutuante -->
-    <a href="https://wa.me/5516991693735?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%21" target="_blank" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
+  <div class="container">
+    <img src="logo.png" alt="Tubarão Infocell" class="logo">
+    <h1>Solicite sua Cotação</h1>
+    <p>Fale conosco diretamente pelo WhatsApp e tire suas dúvidas com nossa equipe.</p>
+    <a class="btn-whatsapp" href="https://wa.me/5516991693735?text=Olá!%20Gostaria%20de%20solicitar%20uma%20cotação." target="_blank">
+      Ir para o WhatsApp
     </a>
-
-    <footer>
-        <p>© 2025 Tubarão Infocell | Ribeirão Preto, SP | <a href="https://wa.me/5516991693735">WhatsApp: (16) 99169-3735</a> | <a href="./index.html">Voltar ao Início</a></p>
-    </footer>
-
-    <!-- Script do GSAP -->
-    <script>
-        // Animações GSAP
-        gsap.from(".logo-container img", { duration: 1, x: -50, opacity: 0, ease: "power2.out" });
-        gsap.from(".logo-container h1", { duration: 1, x: 50, opacity: 0, delay: 0.3, ease: "power2.out" });
-        gsap.from("header .subtitle", { duration: 1, y: 50, opacity: 0, delay: 0.6, ease: "power2.out" });
-        gsap.from(".cotacao-section h2", { duration: 1, opacity: 0, y: 50, delay: 0.9 });
-        gsap.from(".cotacao-section p", { duration: 1, opacity: 0, y: 50, delay: 1.2 });
-        gsap.from(".cta-button", { duration: 1, scale: 0, opacity: 0, delay: 1.5, ease: "back.out(1.7)" });
-        gsap.from(".cotacao-info", { duration: 1, opacity: 0, y: 50, delay: 1.8 });
-    </script>
+  </div>
 </body>
 </html>
