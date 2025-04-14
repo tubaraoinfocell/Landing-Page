@@ -328,6 +328,7 @@
         </div>
         <p class="subtitle">A Melhor solução para o seu Smartphone!</p>
         <button class="cta-button" onclick="window.location.href='https://wa.me/5516991693735?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%21'">Fale Conosco</button>
+        <button class="cta-button" onclick="window.location.href='cotacao.html'">Solicitar Cotação</button>
     </header>
 
     <main>
@@ -350,7 +351,7 @@
             <div class="servico-item">
                 <i class="fas fa-microchip"></i>
                 <h3>Placa</h3>
-                <p>Celular não liga? Wifi e bluetooth ou dados móveis OFF ? Diagnóstico completo.</p>
+                <p>Wi-Fi ou Bluetooth com falhas? Celular não liga ? Diagnóstico completo.</p>
             </div>
         </div>
 
@@ -391,15 +392,18 @@
         gsap.from(".servico-item", { duration: 1, opacity: 0, y: 50, stagger: 0.2, delay: 1.5 });
         gsap.from(".contact-info", { duration: 1, opacity: 0, y: 50, delay: 2 });
 
-        // Mostrar popup após 7 segundos
-        setTimeout(() => {
-            document.getElementById('whatsappPopup').style.display = 'flex';
-        }, 9000);
-
-        // Função para fechar o popup
-        function closePopup() {
-            document.getElementById('whatsappPopup').style.display = 'none';
+        // Mostrar popup ao clicar no botão WhatsApp
+        function openPopup() {
+            document.getElementById("whatsappPopup").style.display = "flex";
         }
+
+        // Fechar popup
+        function closePopup() {
+            document.getElementById("whatsappPopup").style.display = "none";
+        }
+
+        // Defina um tempo para exibir o popup
+        setTimeout(openPopup, 3000); // 8 segundos após a página carregar
     </script>
 </body>
 </html>
