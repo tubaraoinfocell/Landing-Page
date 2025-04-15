@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tubarão Infocell</title>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZ1RN4B27B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZ1RN4B27B');
+</script>
     <!-- Font Awesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Google Fonts: Orbitron -->
@@ -328,7 +337,6 @@
         </div>
         <p class="subtitle">A Melhor solução para o seu Smartphone!</p>
         <button class="cta-button" onclick="window.location.href='https://wa.me/5516991693735?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%21'">Fale Conosco</button>
-        <button class="cta-button" onclick="window.location.href='cotacao.html'">Solicitar Cotação</button>
     </header>
 
     <main>
@@ -392,18 +400,15 @@
         gsap.from(".servico-item", { duration: 1, opacity: 0, y: 50, stagger: 0.2, delay: 1.5 });
         gsap.from(".contact-info", { duration: 1, opacity: 0, y: 50, delay: 2 });
 
-        // Mostrar popup ao clicar no botão WhatsApp
-        function openPopup() {
-            document.getElementById("whatsappPopup").style.display = "flex";
-        }
+        // Mostrar popup após 9 segundos
+        setTimeout(() => {
+            document.getElementById('whatsappPopup').style.display = 'flex';
+        }, 9000);
 
-        // Fechar popup
+        // Função para fechar o popup
         function closePopup() {
-            document.getElementById("whatsappPopup").style.display = "none";
+            document.getElementById('whatsappPopup').style.display = 'none';
         }
-
-        // Defina um tempo para exibir o popup
-        setTimeout(openPopup, 8000); // 8 segundos após a página carregar
     </script>
 </body>
 </html>
